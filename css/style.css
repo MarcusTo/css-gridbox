@@ -1,0 +1,144 @@
+:root {
+    --main-padding: 0.4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container {
+    color: #fff;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.06fr 1fr 2fr 0.5fr 3fr;
+    grid-template-areas: 
+    "nav nav nav"
+    "main main main"
+    "feature1 feature2 feature3"
+    "sign-up sign-up sign-up"
+    "content content content"
+    ;
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+nav {
+    background-color: rgb(59, 173, 177);
+    grid-area: nav;
+    padding: var(--main-padding);
+    width: 100%;
+}
+
+.nav-container {
+    align-items: center;
+    display: grid;   
+    height: 100%;
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+
+}
+.cell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+main {
+    background-color: darkslategray;
+    grid-area: main;
+    padding: var(--main-padding);
+}
+
+#content {
+    background-color: tomato;
+    grid-area: content;
+    padding: var(--main-padding);
+}
+
+#feature1 {
+    background-color: seagreen;
+    grid-area: feature1;
+    padding: var(--main-padding);
+}
+
+#feature2 {
+    background-color: royalblue;
+    grid-area: feature2;
+    padding: var(--main-padding);
+}
+
+#feature3 {
+    background-color: violet;
+    grid-area: feature3;
+    padding: var(--main-padding);
+}
+
+footer {
+    background-color: sienna;
+    grid-area: sign-up;
+    padding: var(--main-padding);
+}
+
+@media (max-width: 768px) {
+    #content {
+        
+    }
+
+    .container {
+        gap: 0;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-rows: 0.03fr 0.3fr 0.4fr 0.2fr 0.2fr;
+        grid-template-areas:
+        "nav nav"
+        "main main"
+        "content content"
+        "sign-up feature1"
+        "feature2 feature3"      
+        ;
+        
+        
+    }
+
+    .nav-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+    }
+}
+
+@media (max-width: 480px) {
+    #content {
+        display: block;
+    }
+
+    .container {
+        gap: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, 1fr);
+        grid-template-rows: 0.04fr 0.2fr 0.5fr 0.2fr 0.2fr 0.2fr 0.2fr;
+        grid-template-areas:
+        "nav"
+        "content"
+        "main"
+        "feature1"
+        "feature2"
+        "feature3"
+        "sign-up"
+        ;
+    }
+
+    .nav-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
